@@ -178,7 +178,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Color Threshold Tester for Emgu by Sanjeev Sharma - http://sanjeev.wordpress.com/" +
+            this.Text = "Color Threshold Tester for Emgu by Sanjeev Sharma - http://sanje2v.wordpress.com/" +
     "";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmMain_Load);
