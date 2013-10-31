@@ -36,7 +36,7 @@ namespace EmguColorThresholdTester
             CvInvoke.cvNamedWindow("Original Image");
             CvInvoke.cvNamedWindow("Threshold Image");
 
-            CvInvoke.cvShowImage("Original Image", m_imgSource.Convert<Bgr, Byte>());
+            CvInvoke.cvShowImage("Original Image", m_imgSource.Convert<Bgr, Byte>());   // cvShowImage only works with Bgr or Gray image types
             CvInvoke.cvShowImage("Threshold Image", m_imgThreshold);
 
             ProduceThresholdImage();
@@ -90,6 +90,6 @@ namespace EmguColorThresholdTester
         private void trackValHigh_Scroll(object sender, EventArgs e)
         {
             ProduceThresholdImage();
-        }    
+        }
     }
 }

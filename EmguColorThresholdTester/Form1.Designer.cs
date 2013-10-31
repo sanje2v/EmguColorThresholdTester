@@ -51,9 +51,9 @@
             // trackHueLow
             // 
             this.trackHueLow.Location = new System.Drawing.Point(90, 12);
-            this.trackHueLow.Maximum = 255;
+            this.trackHueLow.Maximum = 180;
             this.trackHueLow.Name = "trackHueLow";
-            this.trackHueLow.Size = new System.Drawing.Size(1193, 42);
+            this.trackHueLow.Size = new System.Drawing.Size(1193, 45);
             this.trackHueLow.TabIndex = 1;
             this.trackHueLow.Scroll += new System.EventHandler(this.trackHueLow_Scroll);
             // 
@@ -62,7 +62,7 @@
             this.trackSatLow.Location = new System.Drawing.Point(90, 116);
             this.trackSatLow.Maximum = 255;
             this.trackSatLow.Name = "trackSatLow";
-            this.trackSatLow.Size = new System.Drawing.Size(1193, 42);
+            this.trackSatLow.Size = new System.Drawing.Size(1193, 45);
             this.trackSatLow.TabIndex = 5;
             this.trackSatLow.Scroll += new System.EventHandler(this.trackSatLow_Scroll);
             // 
@@ -71,7 +71,7 @@
             this.trackValLow.Location = new System.Drawing.Point(90, 227);
             this.trackValLow.Maximum = 255;
             this.trackValLow.Name = "trackValLow";
-            this.trackValLow.Size = new System.Drawing.Size(1193, 42);
+            this.trackValLow.Size = new System.Drawing.Size(1193, 45);
             this.trackValLow.TabIndex = 9;
             this.trackValLow.Scroll += new System.EventHandler(this.trackValLow_Scroll);
             // 
@@ -134,7 +134,7 @@
             this.trackValHigh.Location = new System.Drawing.Point(90, 268);
             this.trackValHigh.Maximum = 255;
             this.trackValHigh.Name = "trackValHigh";
-            this.trackValHigh.Size = new System.Drawing.Size(1193, 42);
+            this.trackValHigh.Size = new System.Drawing.Size(1193, 45);
             this.trackValHigh.TabIndex = 11;
             this.trackValHigh.Scroll += new System.EventHandler(this.trackValHigh_Scroll);
             // 
@@ -143,16 +143,16 @@
             this.trackSatHigh.Location = new System.Drawing.Point(90, 164);
             this.trackSatHigh.Maximum = 255;
             this.trackSatHigh.Name = "trackSatHigh";
-            this.trackSatHigh.Size = new System.Drawing.Size(1193, 42);
+            this.trackSatHigh.Size = new System.Drawing.Size(1193, 45);
             this.trackSatHigh.TabIndex = 7;
             this.trackSatHigh.Scroll += new System.EventHandler(this.trackSatHigh_Scroll);
             // 
             // trackHueHigh
             // 
             this.trackHueHigh.Location = new System.Drawing.Point(90, 54);
-            this.trackHueHigh.Maximum = 255;
+            this.trackHueHigh.Maximum = 180;
             this.trackHueHigh.Name = "trackHueHigh";
-            this.trackHueHigh.Size = new System.Drawing.Size(1193, 42);
+            this.trackHueHigh.Size = new System.Drawing.Size(1193, 45);
             this.trackHueHigh.TabIndex = 3;
             this.trackHueHigh.Scroll += new System.EventHandler(this.trackHueHigh_Scroll);
             // 
@@ -178,8 +178,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Color Threshold Tester for Emgu by Sanjeev Sharma - http://sanje2v.wordpress.com/" +
-    "";
+            this.Text = "Color Threshold Tester for Emgu by Sanjeev Sharma - http://sanje2v.wordpress.com/";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackHueLow)).EndInit();
