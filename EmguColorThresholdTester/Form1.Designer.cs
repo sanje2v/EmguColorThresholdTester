@@ -40,6 +40,9 @@
             this.trackValHigh = new System.Windows.Forms.TrackBar();
             this.trackSatHigh = new System.Windows.Forms.TrackBar();
             this.trackHueHigh = new System.Windows.Forms.TrackBar();
+            this.lnkBlog = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCopy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.trackHueLow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackSatLow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackValLow)).BeginInit();
@@ -80,9 +83,9 @@
             this.lblHueLow.AutoSize = true;
             this.lblHueLow.Location = new System.Drawing.Point(11, 20);
             this.lblHueLow.Name = "lblHueLow";
-            this.lblHueLow.Size = new System.Drawing.Size(68, 13);
+            this.lblHueLow.Size = new System.Drawing.Size(72, 13);
             this.lblHueLow.TabIndex = 0;
-            this.lblHueLow.Text = "Low Hue = 0";
+            this.lblHueLow.Text = "Low Hue = 0°";
             // 
             // lblSatLow
             // 
@@ -125,9 +128,9 @@
             this.lblHueHigh.AutoSize = true;
             this.lblHueHigh.Location = new System.Drawing.Point(11, 53);
             this.lblHueHigh.Name = "lblHueHigh";
-            this.lblHueHigh.Size = new System.Drawing.Size(70, 13);
+            this.lblHueHigh.Size = new System.Drawing.Size(74, 13);
             this.lblHueHigh.TabIndex = 2;
-            this.lblHueHigh.Text = "High Hue = 0";
+            this.lblHueHigh.Text = "High Hue = 0°";
             // 
             // trackValHigh
             // 
@@ -156,11 +159,45 @@
             this.trackHueHigh.TabIndex = 3;
             this.trackHueHigh.Scroll += new System.EventHandler(this.trackHueHigh_Scroll);
             // 
+            // lnkBlog
+            // 
+            this.lnkBlog.AutoSize = true;
+            this.lnkBlog.Location = new System.Drawing.Point(11, 329);
+            this.lnkBlog.Name = "lnkBlog";
+            this.lnkBlog.Size = new System.Drawing.Size(154, 13);
+            this.lnkBlog.TabIndex = 14;
+            this.lnkBlog.TabStop = true;
+            this.lnkBlog.Text = "http://sanje2v.wordpress.com/";
+            this.lnkBlog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkBlog_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 316);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(440, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "This program was written by Sanjeev Sharma. Distributed with GNU License.";
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Location = new System.Drawing.Point(1183, 312);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(100, 21);
+            this.btnCopy.TabIndex = 12;
+            this.btnCopy.Text = "Copy Values";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1295, 317);
+            this.ClientSize = new System.Drawing.Size(1295, 349);
+            this.Controls.Add(this.btnCopy);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lnkBlog);
             this.Controls.Add(this.lblValHigh);
             this.Controls.Add(this.lblSatHigh);
             this.Controls.Add(this.lblHueHigh);
@@ -178,7 +215,7 @@
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Color Threshold Tester for Emgu by Sanjeev Sharma - http://sanje2v.wordpress.com/";
+            this.Text = "Color Threshold Tester";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackHueLow)).EndInit();
@@ -206,6 +243,9 @@
         private System.Windows.Forms.TrackBar trackValHigh;
         private System.Windows.Forms.TrackBar trackSatHigh;
         private System.Windows.Forms.TrackBar trackHueHigh;
+        private System.Windows.Forms.LinkLabel lnkBlog;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCopy;
     }
 }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV;
+using Emgu.CV.UI;
 using Emgu.CV.Structure;
 
 namespace EmguColorThresholdTester
@@ -16,6 +17,10 @@ namespace EmguColorThresholdTester
     {
         private Image<Hsv, Byte> m_imgSource;
         private Image<Gray, Byte> m_imgThreshold;
+
+        private ImageViewer m_frmSourceImage;
+        private ImageViewer m_frmThresholdImage;
+
 
         public frmMain()
         {
@@ -33,11 +38,13 @@ namespace EmguColorThresholdTester
             m_imgSource = new Image<Bgr, Byte>((Bitmap) Image.FromFile(dlgSourcePicture.FileName)).Convert<Hsv, Byte>();
             m_imgThreshold = new Image<Gray, Byte>(m_imgSource.Size);
 
-            CvInvoke.cvNamedWindow("Original Image");
-            CvInvoke.cvNamedWindow("Threshold Image");
+            m_frmSourceImage = new ImageViewer(m_imgSource, "Original Image");
+            m_frmSourceImage.SetDesktopLocation(100, 100);
+            m_frmSourceImage.Show();
 
-            CvInvoke.cvShowImage("Original Image", m_imgSource.Convert<Bgr, Byte>());   // cvShowImage only works with Bgr or Gray image types
-            CvInvoke.cvShowImage("Threshold Image", m_imgThreshold);
+            m_frmThresholdImage = new ImageViewer(m_imgThreshold, "Threshold Image");
+            m_frmSourceImage.SetDesktopLocation(m_frmSourceImage.DesktopLocation.X + m_frmSourceImage.Size.Width + 100, 100);
+            m_frmSourceImage.Show();
 
             ProduceThresholdImage();
         }
@@ -51,8 +58,8 @@ namespace EmguColorThresholdTester
             int SatHigh = trackSatHigh.Value;
             int ValHigh = trackValHigh.Value;
 
-            lblHueLow.Text = "Low Hue = " + HueLow.ToString();
-            lblHueHigh.Text = "High Hue = " + HueHigh.ToString();
+            lblHueLow.Text = "Low Hue = " + HueLow.ToString() + "°";
+            lblHueHigh.Text = "High Hue = " + HueHigh.ToString() + "°";
             lblSatLow.Text = "Low Sat = " + SatLow.ToString();
             lblSatHigh.Text = "High Sat = " + SatHigh.ToString();
             lblValLow.Text = "Low Val = " + ValLow.ToString();
@@ -90,6 +97,17 @@ namespace EmguColorThresholdTester
         private void trackValHigh_Scroll(object sender, EventArgs e)
         {
             ProduceThresholdImage();
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText("InRange(new Hsv(" + trackHueLow.Value.ToString() + ", " + trackSatLow.Value.ToString() + ", " + trackValLow.Value.ToString() + "), " +
+                                "new Hsv(" + trackHueHigh.Value.ToString() + ", " + trackSatHigh.Value.ToString() + ", " + trackValHigh.Value.ToString() + "))");
+        }
+
+        private void lnkBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(lnkBlog.Text);
         }
     }
 }
