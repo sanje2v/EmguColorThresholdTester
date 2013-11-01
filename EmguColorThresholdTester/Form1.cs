@@ -39,12 +39,12 @@ namespace EmguColorThresholdTester
             m_imgThreshold = new Image<Gray, Byte>(m_imgSource.Size);
 
             m_frmSourceImage = new ImageViewer(m_imgSource, "Original Image");
-            m_frmSourceImage.SetDesktopLocation(100, 100);
             m_frmSourceImage.Show();
+            m_frmSourceImage.SetDesktopLocation(100, 100);
 
             m_frmThresholdImage = new ImageViewer(m_imgThreshold, "Threshold Image");
-            m_frmSourceImage.SetDesktopLocation(m_frmSourceImage.DesktopLocation.X + m_frmSourceImage.Size.Width + 100, 100);
-            m_frmSourceImage.Show();
+            m_frmThresholdImage.Show();
+            m_frmThresholdImage.SetDesktopLocation(m_frmSourceImage.DesktopLocation.X + m_frmSourceImage.Size.Width + 100, 100);
 
             ProduceThresholdImage();
         }
@@ -66,7 +66,7 @@ namespace EmguColorThresholdTester
             lblValHigh.Text = "High Val = " + ValHigh.ToString();
 
             m_imgThreshold = m_imgSource.InRange(new Hsv(HueLow, SatLow, ValLow), new Hsv(HueHigh, SatHigh, ValHigh));
-            CvInvoke.cvShowImage("Threshold Image", m_imgThreshold);
+            m_frmThresholdImage.Image = m_imgThreshold;
         }
 
         private void trackHueLow_Scroll(object sender, EventArgs e)
