@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.trackHueLow = new System.Windows.Forms.TrackBar();
             this.trackSatLow = new System.Windows.Forms.TrackBar();
             this.trackValLow = new System.Windows.Forms.TrackBar();
@@ -211,12 +212,12 @@
             this.Controls.Add(this.trackSatLow);
             this.Controls.Add(this.trackHueLow);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(100, 500);
             this.MaximizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Color Threshold Tester";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackHueLow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackSatLow)).EndInit();
